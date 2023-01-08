@@ -1,9 +1,33 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; // 1rem = 10px, 10/16 = 62.5%
+
+  // @include respod-phone {
+  //   font-size: 50%;
+  // }
+
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px, 9/16
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; // irem = 8px, 8/16
+  }
+
+  @include respond(big-desktop) {
+    font-size: 70%; //ire = 12 , 12/16
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
